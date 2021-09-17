@@ -1,0 +1,3 @@
+git remote add upstream git@github.com:freqtrade/freqtrade.git
+git remote -v
+git pull upstream develop
