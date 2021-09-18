@@ -78,7 +78,7 @@ def test_copy_sample_files(mocker, default_conf, caplog) -> None:
     assert copymock.call_args_list[0][0][1] == str(
         Path('/tmp/bar') / 'strategies/sample_strategy.py')
     assert copymock.call_args_list[1][0][1] == str(
-        Path('/tmp/bar') / 'hyperopts/sample_hyperopt_loss.py')
+        Path('/tmp/bar') / 'hyperopts.txt/sample_hyperopt_loss.py')
     assert copymock.call_args_list[2][0][1] == str(
         Path('/tmp/bar') / 'notebooks/strategy_analysis_example.ipynb')
 

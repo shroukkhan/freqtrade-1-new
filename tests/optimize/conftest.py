@@ -18,7 +18,7 @@ def hyperopt_conf(default_conf):
         'runmode': RunMode.HYPEROPT,
         'strategy': 'HyperoptableStrategy',
         'hyperopt_loss': 'ShortTradeDurHyperOptLoss',
-                         'hyperopt_path': str(Path(__file__).parent / 'hyperopts'),
+                         'hyperopt_path': str(Path(__file__).parent / 'hyperopts.txt'),
                          'epochs': 1,
                          'timerange': None,
                          'spaces': ['default'],

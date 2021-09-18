@@ -42,7 +42,7 @@ DEFAULT_TRADES_COLUMNS = ['timestamp', 'id', 'type', 'side', 'price', 'amount', 
 LAST_BT_RESULT_FN = '.last_result.json'
 FTHYPT_FILEVERSION = 'fthypt_fileversion'
 
-USERPATH_HYPEROPTS = 'hyperopts'
+USERPATH_HYPEROPTS = 'hyperopts.txt'
 USERPATH_STRATEGIES = 'strategies'
 USERPATH_NOTEBOOKS = 'notebooks'
 
