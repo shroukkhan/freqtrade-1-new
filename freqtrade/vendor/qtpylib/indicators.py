@@ -604,9 +604,10 @@ def pvt(bars):
 
 
 def chopiness(bars, window=14):
-    atrsum = true_range(bars).rolling(window).sum()
-    highs = bars['high'].rolling(window).max()
-    lows = bars['low'].rolling(window).min()
+    df = bars.copy()
+    atrsum = true_range(df).rolling(window).sum()
+    highs = df['high'].rolling(window).max()
+    lows = df['low'].rolling(window).min()
     return 100 * np.log10(atrsum / (highs - lows)) / np.log10(window)
 
 
