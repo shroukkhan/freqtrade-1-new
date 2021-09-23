@@ -1,3 +1,0 @@
-[submodule "user_data"]
-	path = user_data
-	url = git@github.com:shroukkhan/freqtrade-strategies.git
