@@ -2,4 +2,5 @@
 -r requirements.txt
 
 plotly==5.3.1
+finta==1.3
 
