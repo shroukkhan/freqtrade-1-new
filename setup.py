@@ -53,7 +53,7 @@ setup(
         'urllib3',
         'wrapt',
         'jsonschema',
-        'TA-Lib',
+        'finta',
         'technical',
         'tabulate',
         'pycoingecko',
