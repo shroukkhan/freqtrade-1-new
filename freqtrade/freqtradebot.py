@@ -139,7 +139,7 @@ class FreqtradeBot(LoggingMixin):
 
         # Only update open orders on startup
         # This will update the database after the initial migration
-        self.update_open_orders()
+        self.startup_update_open_orders()
 
     def process(self) -> None:
         """
@@ -237,7 +237,7 @@ class FreqtradeBot(LoggingMixin):
         open_trades = len(Trade.get_open_trades())
         return max(0, self.config['max_open_trades'] - open_trades)
 
-    def update_open_orders(self):
+    def startup_update_open_orders(self):
         """
         Updates open orders based on order list kept in the database.
         Mainly updates the state of orders - but may also close trades
@@ -1217,7 +1217,7 @@ class FreqtradeBot(LoggingMixin):
             'exchange': trade.exchange.capitalize(),
             'pair': trade.pair,
             'gain': gain,
-            'limit': profit_rate,
+            'limit': profit_rate or 0,
             'order_type': order_type,
             'amount': trade.amount,
             'open_rate': trade.open_rate,
@@ -1226,7 +1226,7 @@ class FreqtradeBot(LoggingMixin):
             'profit_ratio': profit_ratio,
             'sell_reason': trade.sell_reason,
             'open_date': trade.open_date,
-            'close_date': trade.close_date,
+            'close_date': trade.close_date or datetime.now(timezone.utc),
             'stake_currency': self.config['stake_currency'],
             'fiat_currency': self.config.get('fiat_display_currency', None),
             'reason': reason,
