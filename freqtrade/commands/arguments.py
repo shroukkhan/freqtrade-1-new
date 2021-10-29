@@ -23,7 +23,8 @@ ARGS_COMMON_OPTIMIZE = ["timeframe", "timerange", "dataformat_ohlcv",
 
 ARGS_BACKTEST = ARGS_COMMON_OPTIMIZE + ["position_stacking", "use_max_market_positions",
                                         "enable_protections", "dry_run_wallet", "timeframe_detail",
-                                        "strategy_list", "export", "exportfilename"]
+                                        "strategy_list", "export", "exportfilename",
+                                        "backtest_breakdown"]
 
 ARGS_HYPEROPT = ARGS_COMMON_OPTIMIZE + ["hyperopt", "hyperopt_path",
                                         "position_stacking", "use_max_market_positions",
@@ -63,9 +64,9 @@ ARGS_CONVERT_TRADES = ["pairs", "timeframes", "exchange", "dataformat_ohlcv", "d
 
 ARGS_LIST_DATA = ["exchange", "dataformat_ohlcv", "pairs"]
 
-ARGS_DOWNLOAD_DATA = ["pairs", "pairs_file", "days", "new_pairs_days", "timerange",
-                      "download_trades", "exchange", "timeframes", "erase", "dataformat_ohlcv",
-                      "dataformat_trades"]
+ARGS_DOWNLOAD_DATA = ["pairs", "pairs_file", "days", "new_pairs_days", "include_inactive",
+                      "timerange", "download_trades", "exchange", "timeframes",
+                      "erase", "dataformat_ohlcv", "dataformat_trades"]
 
 ARGS_PLOT_DATAFRAME = ["pairs", "indicators1", "indicators2", "plot_limit",
                        "db_url", "trade_source", "export", "exportfilename",
@@ -89,7 +90,7 @@ ARGS_HYPEROPT_LIST = ["hyperopt_list_best", "hyperopt_list_profitable",
 
 ARGS_HYPEROPT_SHOW = ["hyperopt_list_best", "hyperopt_list_profitable", "hyperopt_show_index",
                       "print_json", "hyperoptexportfilename", "hyperopt_show_no_header",
-                      "disableparamexport"]
+                      "disableparamexport", "backtest_breakdown"]
 
 NO_CONF_REQURIED = ["convert-data", "convert-trade-data", "download-data", "list-timeframes",
                     "list-markets", "list-pairs", "list-strategies", "list-data",

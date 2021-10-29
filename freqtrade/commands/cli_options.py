@@ -193,6 +193,12 @@ AVAILABLE_CLI_OPTIONS = {
         type=float,
         metavar='FLOAT',
     ),
+    "backtest_breakdown": Arg(
+        '--breakdown',
+        help='Show backtesting breakdown per [day, week, month].',
+        nargs='+',
+        choices=constants.BACKTEST_BREAKDOWNS
+    ),
     # Edge
     "stoploss_range": Arg(
         '--stoplosses',
@@ -354,6 +360,11 @@ AVAILABLE_CLI_OPTIONS = {
         help='Download data for given number of days.',
         type=check_int_positive,
         metavar='INT',
+    ),
+    "include_inactive": Arg(
+        '--include-inactive-pairs',
+        help='Also download data from inactive pairs.',
+        action='store_true',
     ),
     "new_pairs_days": Arg(
         '--new-pairs-days',
